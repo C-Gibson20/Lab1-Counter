@@ -258,8 +258,8 @@ This `counter_tb.cpp` displays the hexadecimal counter on the Vbuddy seven-segme
 
 #### Vbuddy Output
 
-![](Logbook_Images/6.png)
-![](Logbook_Images/7.png)
+![](Logbook_Images/6.jpg)
+![](Logbook_Images/7.jpg)
 
 The figures show that the Vbuddy plotting and seven-segment display are correctly displaying the counter value.
 
@@ -290,7 +290,7 @@ The implementation of `counter_tb.cpp` is unchanged from the uni-directional cou
 
 #### Vbuddy Output
 
-![](Logbook_Images/8.png)
+![](Logbook_Images/8.jpg)
 
 The figure shows that the bi-directional counter is correctly implemented. Each peak and trough corresponds to the rotary being pressed.
 
@@ -382,7 +382,7 @@ int main(int argc, char **argv, char **env) {
 
 #### Vbuddy Output
 
-![](Logbook_Images/9.png)
+![](Logbook_Images/9.jpg)
 
 This output plot resets to the pre-set `v` value when the rotary is pressed and increments otherwise.
 
