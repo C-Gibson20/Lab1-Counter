@@ -61,7 +61,7 @@ int main(int argc, char **argv, char **env) {
 
 #### GTKWave Simulation
 
-![[1.png]]
+![](Logbook_Images/1.png)
 
 The resolution of the time axis in the GTKWave simulation is in picoseconds. This is reflective of the clock speed of the computer. For simulation this does not matter however in practice the clock frequency is important as it must accommodate the setup and hold time of the hardware.
 
@@ -94,7 +94,7 @@ The implementation of `counter_tb.cpp` is identical for synchronous and asynchro
 
 #### GTKWave Simulation
 
-![[2.png]]
+![](Logbook_Images/2.png)
 
 The simulation displays the additional logic is performing asynchronous reset as desired.
 
@@ -173,7 +173,7 @@ To implement a pause for three cycles once the counter reaches `0x9` I used swit
 
 #### GTKWave Simulation
 
-![[3.png]]
+![](Logbook_Images/3.png)
 
 The simulation displays the switch state logic is pausing the counting at any point that 0x9 is encountered as desired.
 
@@ -258,8 +258,8 @@ This `counter_tb.cpp` displays the hexadecimal counter on the Vbuddy seven-segme
 
 #### Vbuddy Output
 
-![[6.jpg|400]]
-![[7.jpg|400]]
+![](Logbook_Images/6.png)
+![](Logbook_Images/7.png)
 
 The figures show that the Vbuddy plotting and seven-segment display are correctly displaying the counter value.
 
@@ -290,7 +290,7 @@ The implementation of `counter_tb.cpp` is unchanged from the uni-directional cou
 
 #### Vbuddy Output
 
-![[8.jpg|400]]
+![](Logbook_Images/8.png)
 
 The figure shows that the bi-directional counter is correctly implemented. Each peak and trough corresponds to the rotary being pressed.
 
@@ -382,7 +382,7 @@ int main(int argc, char **argv, char **env) {
 
 #### Vbuddy Output
 
-![[9.jpg|400]]
+![](Logbook_Images/9.png)
 
 This output plot resets to the pre-set `v` value when the rotary is pressed and increments otherwise.
 
@@ -467,7 +467,7 @@ int main(int argc, char **argv, char **env) {
 
 ### GTKWave Simulation
 
-![[4.png]]
+![](Logbook_Images/4.png)
 
 The output simulation show that the count only increment when `ld` is high, implementing the desired one-shot behaviour.
 
@@ -573,7 +573,7 @@ The `doit.sh` file has been modified to include of the modules so that the Veril
 
 **GTKWave Simulation**
 
-![[5.png]]
+![](Logbook_Images/5.png)
 
 This Simulation output shows the count value and correct corresponding BCD conversion value.
 
