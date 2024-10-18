@@ -22,8 +22,8 @@ int main(int argc, char **argv, char **env) {
     top->clk = 1;
     top->rst = 1;
     top->ld = 0;
-
-    for (i=0; i<300; i++){
+    
+    for (i=0; i<100; i++){
 
         for (clk=0; clk<2; clk++) {
             tfp->dump (2*i+clk);
@@ -31,14 +31,14 @@ int main(int argc, char **argv, char **env) {
             top->eval ();
         }
 
-        // vbdHex(4, (int(top->count) >> 16) & 0xF);
-        // vbdHex(3, (int(top->count) >> 8) & 0xF);
-        // vbdHex(2, (int(top->count) >> 4) & 0xF);
-        // vbdHex(1, int(top->count) & 0xF);
-        // vbdCycle(i+1);
-
-        vbdPlot(int(top->count), 0, 255);
+        vbdHex(4, (int(top->count) >> 16) & 0xF);
+        vbdHex(3, (int(top->count) >> 8) & 0xF);
+        vbdHex(2, (int(top->count) >> 4) & 0xF);
+        vbdHex(1, int(top->count) & 0xF);
         vbdCycle(i+1);
+
+        // vbdPlot(int(top->count), 0, 255);
+        // vbdCycle(i+1);
 
         top->rst = (i < 2) | (i == 15);
         top->ld = vbdFlag();

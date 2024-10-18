@@ -22,7 +22,7 @@ int main(int argc, char **argv, char **env) {
     top->rst = 1;
     top->en = 0;
 
-    for (i=0; i<300; i++){
+    for (i=0; i<100; i++){
 
         for (clk=0; clk<2; clk++) {
             tfp->dump (2*i+clk);
@@ -30,16 +30,13 @@ int main(int argc, char **argv, char **env) {
             top->eval ();
         }
 
-        // vbdHex(4, (int(top->bcd) >> 16) & 0xF);
-        vbdHex(3, (int(top->bcd) >> 8) & 0xF);
-        vbdHex(2, (int(top->bcd) >> 4) & 0xF);
-        vbdHex(1, int(top->bcd) & 0xF);
+        vbdHex(4, (int(top->count) >> 16) & 0xF);
+        vbdHex(3, (int(top->count) >> 8) & 0xF);
+        vbdHex(2, (int(top->count) >> 4) & 0xF);
+        vbdHex(1, int(top->count) & 0xF);
         vbdCycle(i+1);
 
-        // vbdPlot(int(top->count), 0, 255);
-        // vbdCycle(i+1);
-
-        top->rst = (i < 0);
+        top->rst = 0;
         top->en = vbdFlag();
         top->v = vbdValue(); 
         if (Verilated::gotFinish()) exit(0);
